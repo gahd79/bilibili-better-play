@@ -234,16 +234,16 @@
 
     if (specialInfo.isSpecial) {
       // 根据用户配置来改变播放设置
+      setDm(specialInfo.dm);
       setSubtitles(specialInfo.subtitle);
       setPlaybackRate(specialInfo.rate);
       setAutoPlay(specialInfo.autoPlay);
-      setDm(specialInfo.dm);
     } else {
       // 对其他UP主设置正常速度,关闭自动连播,关闭自动连播,开启弹幕
+      setDm(true);
       setSubtitles(false);
       setPlaybackRate(1.0);
       setAutoPlay(false);
-      setDm(true);
     }
   }
 
@@ -254,8 +254,6 @@
     if (location.href !== lastUrl) {
       lastUrl = location.href;
       log('检测到URL变化，重新尝试开启脚本');
-      retryCount = 0;
-      specialRetryCount = 0;
       setTimeout(setSpecialPlaybackOptions, 1500);
     }
   }
