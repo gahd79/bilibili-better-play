@@ -203,7 +203,7 @@
     log(`弹幕-${enable ? '开启' : '关闭'} 弹幕`);
 
     // 查找弹幕控制按钮
-    const dmButton = document.querySelector('.bpx-player-dm-switch')
+    const dmButton = document.querySelector('.bpx-player-dm-switch input')
 
     // 查找弹幕设置按钮
     const dmSettingButton = document.querySelector('.bpx-player-dm-setting')
@@ -214,14 +214,14 @@
     }
 
     // 检查当前弹幕状态,通过检查弹幕设置按钮是否被禁用来判断是否开启了弹幕
-    const isDmActive = dmSettingButton.classList.contains('disabled');
+    const isDmActive = dmSettingButton.classList.contains('disabled') ? false : true;
 
     // 如果状态不匹配，则点击切换
-    if (enable !== isDmActive) {
+    if (enable === isDmActive) {
+      log(`弹幕-弹幕已处于${enable ? '开启' : '关闭'}状态`);
+    } else {
       dmButton.click();
       log(`弹幕-${enable ? '开启' : '关闭'} 弹幕成功`);
-    } else {
-      log(`弹幕-弹幕已处于${enable ? '开启' : '关闭'}状态`);
     }
 
     return true;
