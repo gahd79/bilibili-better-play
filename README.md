@@ -29,7 +29,7 @@
 通过 `specialUps` 数组可配置需要特殊设置的UP主，每个配置项包含以下参数：
 - `up` (string)：**必填**，UP主账号名称（需与B站页面显示完全一致）
 - `subtitle` (boolean)：是否自动开启字幕，默认false
-- `rate` (number)：播放速度，支持0.5-2.0（支持0.5倍速到2.0倍速）
+- `rate` (number)：播放速度
 - `autoPlay` (boolean)：是否开启自动连播，默认false
 - `dm` (boolean)：是否显示弹幕，默认true
 
