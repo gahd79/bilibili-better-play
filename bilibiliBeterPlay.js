@@ -44,7 +44,7 @@
   // 检查当前UP主是否在特殊列表中
   function isSpecialUp() {
     // 查找UP主名称元素
-    const upNameElement = document.querySelector('.up-name')
+    const upNameElement = document.querySelector('.up-name') || document.querySelector('.staff-name')
 
     let specialInfo = { isSpecial: false };
     if (!upNameElement) {
